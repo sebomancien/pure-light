@@ -1,0 +1,10 @@
+services:
+  builder:
+    image: espressif/idf:release-v5.2
+#    user: "${UID}:${GID}"
+    environment:
+      - HOME=/tmp
+    volumes:
+      - ./project:/project
+    working_dir: /project
+    command: idf.py build
